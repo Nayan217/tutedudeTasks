@@ -1,48 +1,66 @@
+/* Background color for the whole page */
 body {
     background-color: coral;
 }
 
+/* This targets all elements with class "head" */
 .head {
     color: darkblue;
 }
 
+/* ID selector - only one element can have this ID */
 #bglime {
     background-color: lime;
 }
 
+/* This changes only the span inside the element with id bglime */
 #bglime span {
     color: red;
 }
 
+/* All paragraph tags get white color */
 p {
     color: white;
 }
 
+/* Paragraph with id "para" gets green color */
 #para {
     color: green;
 }
 
+/* span inside any paragraph tag gets these styles */
 p span {
     color: black;
     font-size: 20px;
 }
 
+/* All li elements inside ul get white color */
 ul li {
     color: white;
 }
 
+/* nth-child(1) means first li in the ul, then we target the link inside it */
 ul li:nth-child(1) a {
     background-color: yellow;
 }
 
+/* This targets the link in the second li of ul */
 ul li:nth-child(2) a {
     background-color: blue;
 }
 
+/* Second li in ol gets blue color */
 ol li:nth-child(2) {
     color: blue;
 }
 
+/* Third li in ol gets red color */
 ol li:nth-child(3) {
     color: red;
+}
+
+/* Hover effect - when you move mouse over links they change color */
+a:hover {
+    color: white;
+    transition: color 0.3s;
 }

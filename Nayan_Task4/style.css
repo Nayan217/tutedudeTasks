@@ -1,15 +1,17 @@
+/* box-sizing makes sure padding doesn't mess up width/height */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Using viewport units (vw, vh) to make layout responsive */
 body {
     width: 100vw;
     height: 100vh;
     padding: 10vh 25vw;
     background-color: #efefef;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
 .card {
@@ -38,4 +40,11 @@ button {
     color: white;
     cursor: pointer;
     background: linear-gradient(to right, #f4b400, #49d132);
+    transition: transform 0.3s, filter 0.3s;
+}
+
+/* Hover effect - button grows and gets brighter */
+button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
 }

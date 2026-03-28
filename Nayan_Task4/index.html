@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task3 - CSS Units, Box Model, Fonts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,8 +16,16 @@
         <div class="image-box">
             <img src="../images/landscape.jpg" alt="Scenery Image">
         </div>
-        <button type="button" onclick="alert('Button clicked!')">Click Me</button>
+        <button type="button" id="myButton">Click Me</button>
     </div>
+
+    <script>
+        // Getting the button and adding click event
+        const button = document.getElementById('myButton');
+        button.addEventListener('click', function () {
+            alert('Button clicked!');
+        });
+    </script>
 </body>
 
 </html>
