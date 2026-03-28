@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+/* Top navigation bar */
+.navbar {
+    width: 100%;
+    height: 10vh;
+    padding: 2vh 5vw;
+}
+
+/* Logo on the left */
+.logo {
+    display: inline-block;
+    width: 20%;
+    font-weight: bold;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+/* Menu in the center */
+.menu {
+    display: inline-block;
+    width: 55%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #666;
+    margin: 0 12px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+/* Hover effect for menu links */
+.menu a:hover {
+    color: #1fa2ff;
+}
+
+/* Username on the right */
+.user {
+    display: inline-block;
+    width: 20%;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.user span {
+    display: inline-block;
+    min-width: 120px;
+    padding: 7px 16px;
+    border-radius: 10px;
+    background-color: #e6f4ff;
+    color: deepskyblue;
+    font-size: 13px;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.user span:hover {
+    background-color: #cceeff;
+    transform: translateY(-2px);
+}
+
+/* Main hero section */
+.hero {
+    width: 100%;
+    height: 90vh;
+    padding: 6vh 5vw;
+}
+
+/* Left side content */
+.hero-left {
+    display: inline-block;
+    width: 48%;
+    vertical-align: middle;
+}
+
+.hero-left h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    color: #333;
+}
+
+.hero-left span {
+    color: #1fa2ff;
+}
+
+.hero-left p {
+    margin-top: 18px;
+    font-size: 16px;
+    color: #777;
+    line-height: 1.5;
+}
+
+.hero-left button {
+    margin-top: 24px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1fa2ff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Button hover effect */
+.hero-left button:hover {
+    background-color: #1890e0;
+    transform: translateY(-2px);
+}
+
+/* Right side image */
+.hero-right {
+    display: inline-block;
+    width: 48%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.hero-right img {
+    width: 65%;
+}
