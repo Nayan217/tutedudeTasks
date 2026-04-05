@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables - stores colors and sizes we use multiple times */
+:root {
+    --brand-blue: #27a8f2;
+    --text-main: #2f3b47;
+    --text-sub: #7b8894;
+    --tag-bg: #e8f5ff;
+    --page-max: 1120px;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-main);
+    background-color: #ffffff;
+}
+
+/* Make navbar and hero centered with max width */
+.navbar,
+.hero {
+    width: min(var(--page-max), 92%);
+    margin: 0 auto;
+}
+
+/* Navigation bar - flexbox puts logo, menu, and username in a row */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0 10px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #6a7580;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.menu a:hover {
+    color: var(--brand-blue);
+}
+
+.user {
+    min-width: 118px;
+    border-radius: 10px;
+    background-color: var(--tag-bg);
+    color: var(--brand-blue);
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    padding: 8px 16px;
+}
+
+.user:hover {
+    background-color: #cceeff;
+    transform: translateY(-2px);
+}
+
+/* Hero section - main content area with text on left and image on right */
+.hero {
+    min-height: calc(100vh - 76px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 20px 0 40px;
+}
+
+.hero-left {
+    flex: 1;
+    max-width: 560px;
+}
+
+.hero-left h1 {
+    font-size: 52px;
+    line-height: 1.13;
+    letter-spacing: -0.5px;
+}
+
+/* span is used for the blue highlighted text */
+.hero-left h1 span {
+    color: var(--brand-blue);
+}
+
+.hero-left p {
+    margin-top: 16px;
+    max-width: 500px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-sub);
+}
+
+.hero-left button {
+    margin-top: 28px;
+    border: none;
+    border-radius: 9px;
+    background-color: var(--brand-blue);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 13px 24px;
+    cursor: pointer;
+}
+
+.hero-left button:hover {
+    background-color: #149be7;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-right img {
+    width: min(360px, 100%);
+    display: block;
+}
+
+/* Tablet view - smaller screens between 640px and 992px */
+@media (max-width: 992px) {
+    .navbar {
+        padding-top: 14px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .menu {
+        gap: 16px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .user {
+        min-width: 96px;
+        font-size: 11px;
+        padding: 7px 12px;
+    }
+
+    .hero {
+        gap: 22px;
+        min-height: auto;
+        padding: 22px 0 30px;
+    }
+
+    .hero-left h1 {
+        font-size: 38px;
+    }
+
+    .hero-left p {
+        font-size: 14px;
+        max-width: 420px;
+    }
+
+    .hero-left button {
+        font-size: 12px;
+        padding: 11px 18px;
+    }
+
+    .hero-right img {
+        width: min(290px, 100%);
+    }
+}
+
+/* Mobile view - screens smaller than 640px */
+@media (max-width: 640px) {
+    .navbar {
+        padding-top: 12px;
+    }
+
+    /* Hide the menu links on mobile phones */
+    .menu {
+        display: none;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .user {
+        min-width: 90px;
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
+    /* Stack content vertically for mobile */
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 14px 0 26px;
+    }
+
+    .hero-left {
+        max-width: 100%;
+    }
+
+    .hero-left h1 {
+        font-size: 36px;
+    }
+
+    .hero-left p {
+        margin-top: 12px;
+        font-size: 13px;
+    }
+
+    .hero-left button {
+        margin-top: 16px;
+    }
+
+    .hero-right {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .hero-right img {
+        width: min(260px, 86%);
+    }
+}
