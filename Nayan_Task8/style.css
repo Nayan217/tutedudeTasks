@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Color variables - makes it easy to change colors throughout the site */
+:root {
+    --brand-blue: #28a8f3;
+    --text-main: #2f3b47;
+    --text-sub: #7b8894;
+    --muted-link: #667380;
+    --tag-bg: #e7f5ff;
+    --menu-bg: #020202;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-main);
+    background: #ffffff;
+}
+
+/* Container for navbar and hero sections */
+.navbar,
+.hero {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+}
+
+/* Navbar layout using flexbox */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0 12px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.menu {
+    display: flex;
+    gap: 24px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--muted-link);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.menu a:hover {
+    color: var(--brand-blue);
+}
+
+.user {
+    min-width: 118px;
+    border-radius: 10px;
+    background-color: var(--tag-bg);
+    color: var(--brand-blue);
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 14px;
+}
+
+/* Hamburger menu is hidden on desktop, shown on mobile */
+.hamburger-area {
+    display: none;
+}
+
+.hero {
+    min-height: calc(100vh - 76px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 38px;
+    padding: 20px 0 36px;
+}
+
+.hero-left {
+    flex: 1;
+    max-width: 560px;
+}
+
+.hero-left h1 {
+    font-size: 52px;
+    line-height: 1.15;
+}
+
+.hero-left span {
+    color: var(--brand-blue);
+}
+
+.hero-left p {
+    margin-top: 16px;
+    max-width: 500px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-sub);
+}
+
+.hero-left button {
+    margin-top: 28px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--brand-blue);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 13px 24px;
+    cursor: pointer;
+}
+
+.hero-left button:hover {
+    background-color: #149ce8;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-right img {
+    width: min(360px, 100%);
+    display: block;
+}
+/* Tablet view - makes text and elements smaller for medium screens */
+@media (max-width: 992px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    .menu {
+        gap: 16px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .user {
+        min-width: 98px;
+        padding: 7px 12px;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: auto;
+        gap: 20px;
+    }
+
+    .hero-left h1 {
+        font-size: 38px;
+    }
+
+    .hero-left p {
+        font-size: 14px;
+        max-width: 430px;
+    }
+
+    .hero-left button {
+        font-size: 12px;
+        padding: 11px 18px;
+    }
+
+    .hero-right img {
+        width: min(290px, 100%);
+    }
+}
+
+/* Mobile with hamburger menu */
+@media (max-width: 640px) {
+    .navbar {
+        padding-top: 12px;
+        gap: 10px;
+    }
+
+    /* Hide regular menu on mobile */
+    .menu {
+        display: none;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .user {
+        min-width: 90px;
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+
+    /* Show hamburger menu on mobile */
+    .hamburger-area {
+        display: block;
+        position: relative;
+    }
+
+    /* Hamburger button with three lines */
+    .hamburger-btn {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #d4dbe0;
+        border-radius: 4px;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+        padding: 0 6px;
+        cursor: pointer;
+    }
+
+    /* Each line of the hamburger icon */
+    .hamburger-btn span {
+        width: 100%;
+        height: 2px;
+        background-color: #606e7a;
+        display: block;
+    }
+
+    /* Mobile menu panel - slides in from right side */
+    .mobile-menu-list {
+        display: none;
+        position: absolute;
+        right: -14px;
+        top: -8px;
+        width: 155px;
+        min-height: 100vh;
+        background-color: var(--menu-bg);
+        padding: 150px 20px 20px;
+        z-index: 20;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .mobile-menu-list a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .mobile-menu-list a:hover,
+    .mobile-menu-list a:focus {
+        color: #9fd9ff;
+        outline: none;
+    }
+
+    /* Shows menu when hamburger is clicked - uses CSS :focus-within trick */
+    .hamburger-btn:focus + .mobile-menu-list,
+    .hamburger-area:focus-within .mobile-menu-list {
+        display: flex;
+    }
+
+    /* Stack hero sections vertically on mobile */
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding-top: 14px;
+        min-height: auto;
+    }
+
+    .hero-left h1 {
+        font-size: 36px;
+    }
+
+    .hero-left p {
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    .hero-left button {
+        margin-top: 14px;
+    }
+
+    .hero-right {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .hero-right img {
+        width: min(250px, 84%);
+    }
+}
