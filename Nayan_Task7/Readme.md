@@ -1,46 +1,38 @@
-# Task 7 - Laundry Services Responsive
+# Task 7 - Laundry Services Page
 
-## Project Description
-This is a responsive landing page for a laundry service company. The website has a navigation bar with links and a user button, and a hero section showing the main heading, description text, a call-to-action button, and an image. The page looks good on desktop computers, tablets, and mobile phones.
+## What This Is
+Made a responsive landing page for a laundry service. It has a navbar at top with logo, menu links, and username button. Then there's the main section with a heading, some text, a button, and an image on the side.
 
-I made this page work on different screen sizes using media queries. On tablets, everything gets smaller. On phones, the navigation links hide and the content stacks vertically instead of side-by-side.
-
-## Files
-- `index.html` - The main HTML structure
-- `style.css` - All the styling and responsive design code
-- `Readme.md` - This file
+The main thing I learned here was making it work on different screen sizes - desktop, tablet, and phone.
 
 ## How to Run
-1. Make sure the `images` folder is in the parent directory (one level up)
-2. Open the `index.html` file in any web browser (Chrome, Firefox, Edge, etc.)
-3. To test responsiveness:
-   - Resize your browser window to see how it adapts
-   - Or press F12 and click the device toolbar icon to simulate different devices
-   - Try desktop (1200px+), tablet (640px-992px), and mobile (below 640px) views
-
-## Concepts Demonstrated
-
-### HTML Concepts:
-- Semantic HTML tags (`<header>`, `<nav>`, `<main>`)
-- Image with alt text for accessibility
-
-### CSS Concepts:
-- **CSS Variables** - Used `:root` to store colors and reuse them
-- **Flexbox** - Used for navbar and hero section layouts
-- **Media Queries** - `@media (max-width: ...)` for responsive design
-- **Pseudo-classes** - `:hover` for interactive effects
-- **Box Model** - Padding, margin, and box-sizing
-- **Min/Max functions** - `min()` function to control widths
-- **CSS Reset** - Universal selector `*` to reset default styles
-- **Transitions** - Smooth color changes on hover
-
-### Responsive Design:
-- Desktop: Full 3-column navbar, large text and image
-- Tablet (max-width: 992px): Smaller fonts, reduced spacing
-- Mobile (max-width: 640px): Hidden nav links, vertical stacking with `flex-direction: column`
+1. Just open `index.html` in a browser 
+2. Make sure the images folder is in the parent directory or the image won't show
+3. To check responsive: 
+   - Resize browser window smaller and bigger
+   - Or right-click > Inspect > toggle device toolbar
+   - Check it at different widths
 
 ## What I Learned
-- How to make websites work on phones and tablets
-- Using flexbox to arrange items in rows and columns
-- Media queries help change styles for different screen sizes
-- CSS variables make it easy to change colors throughout the site
+
+**CSS Variables** - Put them in `:root` and then used `var(--blue)` everywhere. Naming them was confusing at first, I kept them simple like --blue, --dark, --gray.
+
+**Flexbox** - Used this for navbar to put logo, menu, username in a row. Also used for hero section to put text and image side by side. The `flex: 1` thing took me a while to understand - it basically means take equal space.
+
+**Media Queries** - This was the hardest part. I used 992px for tablet and 450px for mobile.
+- Why 992px? Honestly just saw it in google and it seemed to work well for tablets
+- Why 450px? Tested on Chrome Toggle device (which is around 390px wide) and 450px seemed like a good cutoff
+
+**Confusing Parts:**
+- `flex-direction: column` - didn't realize I needed this to stack things vertically on mobile. First time I forgot it and everything was still side by side which looked bad
+- The min() function - still not 100% clear on this but I think it picks the smaller value? Used it for width stuff
+- `justify-content: space-between` vs `justify-content: center` - had to google this.
+
+**Things I'd Improve:**
+- The menu disappears completely on mobile which isn't great, maybe should add a hamburger menu button
+- Padding/spacing could probably be better, I just adjusted until it looked okay
+- Not sure if my breakpoints are the correct ones
+
+## Files
+- index.html - the HTML structure
+- style.css - all the CSS

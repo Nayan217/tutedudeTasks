@@ -16,7 +16,7 @@ The page adapts to different screen sizes:
    - The `images` folder should be in the parent directory
 3. Double-click `index.html` to open it in your web browser
 4. To test the hamburger menu:
-   - Resize your browser window to be narrow (less than 640px wide)
+   - Resize your browser window to be narrow (less than 450px wide)
    - Or open Developer Tools (F12) and use responsive design mode
    - Click the hamburger icon (three lines) to see the menu slide in!
 
@@ -29,7 +29,7 @@ The page adapts to different screen sizes:
 ### CSS Concepts:
 - **CSS Variables** - Defined colors once and used them everywhere
 - **Flexbox** - Used to layout navbar and hero section
-- **Media Queries** - Different styles for tablet (992px) and mobile (640px)
+- **Media Queries** - Different styles for tablet (992px) and mobile (450px)
 - **Position Absolute** - Used to place the mobile menu panel
 - **Pseudo-classes** - `:hover`, `:focus`, `:focus-within` for interactions
 - **CSS-only Menu Toggle** - No JavaScript! Used `:focus-within` trick to show/hide menu
@@ -37,7 +37,7 @@ The page adapts to different screen sizes:
 ### Responsive Design:
 - Desktop view (992px and above)
 - Tablet view (641px to 992px)
-- Mobile view (640px and below)
+- Mobile view (450px and below)
 
 ### Cool Trick I Learned:
 The hamburger menu opens without JavaScript! When you click the button, it gets "focus", and CSS can detect that using `:focus-within`. This makes the menu appear. It's like magic but it's just CSS!

@@ -178,7 +178,7 @@ body {
 }
 
 /* Mobile with hamburger menu */
-@media (max-width: 640px) {
+@media (max-width: 450px) {
     .navbar {
         padding-top: 12px;
         gap: 10px;

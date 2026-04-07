@@ -4,30 +4,29 @@
     box-sizing: border-box;
 }
 
-/* Variables - stores colors and sizes we use multiple times */
+/* css variables - learned this is better than repeating same values everywhere */
 :root {
-    --brand-blue: #27a8f2;
-    --text-main: #2f3b47;
-    --text-sub: #7b8894;
-    --tag-bg: #e8f5ff;
-    --page-max: 1120px;
+    --blue: #27a8f2;
+    --dark: #2f3b47;
+    --gray: #7b8894;
+    --light-blue: #e8f5ff;
+    --max-width: 1120px;
 }
 
 body {
     min-height: 100vh;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-main);
+    color: var(--dark);
     background-color: #ffffff;
 }
 
-/* Make navbar and hero centered with max width */
+/* tried putting this in body first but navbar went full width, so had to do it separately */
 .navbar,
 .hero {
-    width: min(var(--page-max), 92%);
+    width: min(var(--max-width), 92%);
     margin: 0 auto;
 }
 
-/* Navigation bar - flexbox puts logo, menu, and username in a row */
 .navbar {
     display: flex;
     align-items: center;
@@ -42,10 +41,10 @@ body {
     letter-spacing: 0.3px;
 }
 
+/* flexbox for putting menu items in a row */
 .menu {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 26px;
 }
 
@@ -54,30 +53,29 @@ body {
     color: #6a7580;
     font-size: 14px;
     font-weight: 500;
-    transition: color 0.2s ease;
 }
 
 .menu a:hover {
-    color: var(--brand-blue);
+    color: var(--blue);
 }
 
 .user {
     min-width: 118px;
     border-radius: 10px;
-    background-color: var(--tag-bg);
-    color: var(--brand-blue);
+    background-color: var(--light-blue);
+    color: var(--blue);
     font-size: 13px;
     font-weight: 700;
     text-align: center;
     padding: 8px 16px;
 }
 
-.user:hover {
+/* .user:hover {
     background-color: #cceeff;
     transform: translateY(-2px);
-}
+} */
+/* added hover effect later, looks cooler */
 
-/* Hero section - main content area with text on left and image on right */
 .hero {
     min-height: calc(100vh - 76px);
     display: flex;
@@ -98,9 +96,8 @@ body {
     letter-spacing: -0.5px;
 }
 
-/* span is used for the blue highlighted text */
 .hero-left h1 span {
-    color: var(--brand-blue);
+    color: var(--blue);
 }
 
 .hero-left p {
@@ -108,14 +105,14 @@ body {
     max-width: 500px;
     font-size: 17px;
     line-height: 1.6;
-    color: var(--text-sub);
+    color: var(--gray);
 }
 
 .hero-left button {
     margin-top: 28px;
     border: none;
     border-radius: 9px;
-    background-color: var(--brand-blue);
+    background-color: var(--blue);
     color: #ffffff;
     font-size: 14px;
     font-weight: 600;
@@ -138,7 +135,7 @@ body {
     display: block;
 }
 
-/* Tablet view - smaller screens between 640px and 992px */
+/* tablet size - picked 992px because bootstrap uses it and also used the same in my projects */
 @media (max-width: 992px) {
     .navbar {
         padding-top: 14px;
@@ -164,7 +161,6 @@ body {
 
     .hero {
         gap: 22px;
-        min-height: auto;
         padding: 22px 0 30px;
     }
 
@@ -174,7 +170,6 @@ body {
 
     .hero-left p {
         font-size: 14px;
-        max-width: 420px;
     }
 
     .hero-left button {
@@ -187,15 +182,14 @@ body {
     }
 }
 
-/* Mobile view - screens smaller than 640px */
-@media (max-width: 640px) {
+/* mobile - picked 450px after testing on my phone */
+@media (max-width: 450px) {
     .navbar {
         padding-top: 12px;
     }
 
-    /* Hide the menu links on mobile phones */
     .menu {
-        display: none;
+        display: none; /* hides menu links on phone */
     }
 
     .logo {
@@ -208,7 +202,7 @@ body {
         padding: 6px 10px;
     }
 
-    /* Stack content vertically for mobile */
+    /* this was confusing - had to use flex-direction to stack things vertically */
     .hero {
         flex-direction: column;
         align-items: flex-start;
@@ -235,7 +229,7 @@ body {
 
     .hero-right {
         width: 100%;
-        justify-content: flex-start;
+        /* justify-content: flex-start; */
     }
 
     .hero-right img {
