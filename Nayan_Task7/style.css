@@ -182,8 +182,8 @@ body {
     }
 }
 
-/* mobile - picked 450px after testing on my phone */
-@media (max-width: 450px) {
+/* mobile - picked 455px after testing on my phone */
+@media (max-width: 455px) {
     .navbar {
         padding-top: 12px;
     }

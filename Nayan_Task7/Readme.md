@@ -19,9 +19,9 @@ The main thing I learned here was making it work on different screen sizes - des
 
 **Flexbox** - Used this for navbar to put logo, menu, username in a row. Also used for hero section to put text and image side by side. The `flex: 1` thing took me a while to understand - it basically means take equal space.
 
-**Media Queries** - This was the hardest part. I used 992px for tablet and 450px for mobile.
+**Media Queries** - This was the hardest part. I used 992px for tablet and 455px for mobile.
 - Why 992px? Honestly just saw it in google and it seemed to work well for tablets
-- Why 450px? Tested on Chrome Toggle device (which is around 390px wide) and 450px seemed like a good cutoff
+- Why 455px? Tested on Chrome Toggle device (which is around 390px wide) and 455px seemed like a good cutoff
 
 **Confusing Parts:**
 - `flex-direction: column` - didn't realize I needed this to stack things vertically on mobile. First time I forgot it and everything was still side by side which looked bad
